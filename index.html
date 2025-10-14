@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assine Agora - Conteúdo Exclusivo</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      background: linear-gradient(145deg, #0b0b0b, #1a0e18);
+      color: #fff;
+      padding: 30px;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background: #141014;
+      padding: 35px 30px;
+      border-radius: 18px;
+      box-shadow: 0 0 35px rgba(255, 0, 120, 0.3);
+      animation: fadeIn 1s ease;
+      text-align: center;
+    }
+
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #ff0055;
+      box-shadow: 0 0 20px rgba(255, 0, 85, 0.4);
+      margin: 0 auto 20px auto;
+      transition: transform 0.4s ease;
+    }
+
+    .profile-pic:hover {
+      transform: scale(1.05);
+    }
+
+    h1 {
+      color: #ff0055;
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      color: #ccc;
+      margin-bottom: 30px;
+    }
+
+    .plan {
+      background: #1e1b1e;
+      border: 1px solid transparent;
+      padding: 20px;
+      margin-bottom: 18px;
+      border-radius: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 12px rgba(255, 0, 85, 0.15);
+    }
+
+    .plan:hover {
+      background: #2a1e2d;
+      box-shadow: 0 0 18px rgba(255, 0, 85, 0.35);
+      transform: scale(1.02);
+    }
+
+    .plan span {
+      font-size: 18px;
+      color: #fff;
+    }
+
+    .badge {
+      background: #ff0055;
+      color: white;
+      padding: 5px 12px;
+      border-radius: 30px;
+      font-size: 13px;
+      margin-left: 10px;
+      font-weight: bold;
+    }
+
+    .price {
+      font-weight: 700;
+      font-size: 20px;
+      color: #ff99c8;
+    }
+
+    .footer-text {
+      font-size: 13px;
+      margin-top: 30px;
+      color: #999;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 500px) {
+      .plan span, .price {
+        font-size: 16px;
+      }
+
+      .badge {
+        font-size: 11px;
+        padding: 4px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- FOTO DE PERFIL -->
+    <img class="profile-pic" src="https://i.imgur.com/guluJQ1.jpeg" alt="Foto de perfil">
+    
+    <h1>🔥 Assine Agora</h1>
+    <p class="subtitle">Conteúdo exclusivo, sem censura <strong>+18</strong> 💋</p>
+
+    <!-- Planos -->
+    <div class="plan" onclick="goToCheckout('1m')">
+      <span>1 mês</span>
+      <span class="price">€ 11,90</span>
+    </div>
+
+    <div class="plan" onclick="goToCheckout('3m')">
+      <div>
+        <span>3 meses</span>
+        <span class="badge">Economize</span>
+      </div>
+      <span class="price">€ 19,90</span>
+    </div>
+
+    <div class="plan" onclick="goToCheckout('12m')">
+      <div>
+        <span>12 meses</span>
+        <span class="badge">Melhor oferta</span>
+      </div>
+      <span class="price">€ 49,90</span>
+    </div>
+
+    <p class="footer-text">Acesso imediato após o pagamento. 100% discreto 🔐</p>
+  </div>
+
+  <script>
+    const checkoutLinks = {
+      '1m': 'https://pay.hotmart.com/E102224968C?off=flah57xs',
+      '3m': 'https://pay.hotmart.com/E102224968C?off=ycz95h8t',
+      '12m': 'https://pay.hotmart.com/E102224968C?off=tcoi5l8p'
+    };
+
+    function goToCheckout(plan) {
+      const link = checkoutLinks[plan];
+      window.location.href = link;
+    }
+  </script>
+
+</body>
+</html>
